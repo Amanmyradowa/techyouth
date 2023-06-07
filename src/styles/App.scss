@@ -1,0 +1,18 @@
+@import"./config/variabless";
+@import"./config/mixins";
+@import"./config/fonts";
+
+
+// components
+@import"./components/header";
+@import"./components/footer";
+@import"./components/course_cart";
+@import"./components/cart";
+
+// pages
+@import"./pages/home";
+@import"./pages/info";
+@import"./pages/news";
+@import"./pages/our_courses";
+@import"./pages/about";
+@import"./pages/web_dev";

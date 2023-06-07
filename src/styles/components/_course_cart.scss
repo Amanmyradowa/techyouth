@@ -1,0 +1,37 @@
+.cart{
+  width: 23%;
+  height: 450px;
+  background: #FFFFFF;
+  box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+  padding: 30px 25px;
+  border-radius: 5px;
+  @include flex(flex-start, flex-start, column);
+  .cart_title{
+    margin: 15px 0;
+    p{
+      font-weight: 900;
+      font-size: $twenty_four;
+      line-height: 32px;
+      letter-spacing: 0.1px;
+      color: $black_grey;
+      font-family: nuni;
+      margin-bottom: 15px;
+    }
+    .line{
+      width: 25%;
+      height: 2px;
+      background-color: $blue;
+      display: inline-block;
+    }
+  }
+  .cart_text{
+    line-height: 20px;
+    font-size: .9vw;
+    color: $grey;
+    letter-spacing: 0.2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

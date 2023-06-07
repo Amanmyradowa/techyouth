@@ -1,0 +1,139 @@
+.container{
+  .page_info{
+    width: 100%;
+    @include flex();
+
+    @include mobile{
+      @include flex(flex-start, center, column)
+    }
+    .info_page_left{
+      width: 50%;
+      position: relative;
+
+      .imgBck{
+        width: 115%;
+        position: absolute;
+        bottom: -465px;
+        left: 30px;
+        z-index: -1;
+
+        @include mobile{
+          display: none;
+        }
+      }
+    }
+    .info_page_right{
+      width: 50%;
+      @include flex(flex-start, flex-end, column);
+
+      @include mobile{
+        width: 100%;
+        position: relative;
+      }
+      .title{
+        color: $black;
+        font-weight: 800;
+        font-size: 70px;
+        font-family: nuni;
+
+        @include mobile{
+          width: 100%;
+          font-size: 34px;
+          text-align: center;
+        }
+        span{
+          color: $blue;
+          font-family: nuni;
+        }
+      }
+      .text{
+        margin: 40px 0 30px;
+        color: $grey;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.2px;
+        text-align: end;
+
+        @include mobile{
+          width: 80%;
+          margin: 12px 0;
+          font-size: 13px;
+          line-height: 20px;
+        }
+      }
+      .info{
+        width: 80%;
+        @include flex(flex-end, flex-end, column);
+        .num_text{
+          width: 100%;
+          @include flex(flex-end);
+          margin-bottom: 10px;
+          &:last-child{
+            margin-bottom: 40px;
+          }
+
+          .num{
+            font-weight: 700;
+            font-size: 24px;
+            color: $blue;
+            padding: 21px 20px;
+            background: $lightGrey;
+            margin-right: 21px;
+          }
+          .num1{
+            border-radius: 302px 200px 200px 200px;
+          }
+          .num2{
+            border-radius: 200px 277px 200px 200px;
+          }
+          .num3{
+            border-radius: 200px 200px 291px 200px;
+          }
+          .num4{
+            border-radius: 200px 200px 200px 303px;
+          }
+          .num5{
+            border-radius: 200px 271px 200px 239px;
+          }
+          .num_text_text{
+            width: 60%;
+            font-size: 20px;
+            line-height: 25px;
+            letter-spacing: 0.2px;
+            color: #737373;
+            
+            @include mobile{
+              font-size: 13px;
+              line-height: 18px;
+            }
+            span{
+              color: $blue;
+            }
+          }
+        }
+      }
+
+      Button{
+        margin-bottom: 50px;
+
+        @include mobile{
+          margin-bottom: 0;
+          font-size: 9px !important;
+        }
+      }
+
+      .imgMobile{
+        display: none;
+
+        @include mobile{
+          display: block !important;
+          position: absolute;
+          top: 540px;
+          object-fit: cover;
+          width: 105%;
+          margin-right: -2.5%;
+        }
+      }
+    }
+  }
+}

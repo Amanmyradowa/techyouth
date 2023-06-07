@@ -1,0 +1,48 @@
+.container{
+  .about{
+    width: 100%;
+    @include flex();
+    .about_left{
+      width: 50%;
+      .about_title{
+        color: $black;
+        font-weight: 800;
+        font-size: $seventy;
+        font-family: nuni;
+        span{
+          color: $blue;
+        }
+      }
+      .text{
+        font-size: 20px;
+        line-height: 30px;
+        color: $grey;
+        margin: 20px 0;
+        span{
+          color: $blue;
+        }
+      }
+      .list{
+        li{
+          font-size: 20px;
+          line-height: 30px;
+          color: $blue;
+        }
+      }
+      .video{
+        margin: 20px 0;
+        border-radius: 20px;
+      }
+    }
+    .about_right{
+      width: 50%;
+      position: relative;
+      img{
+        width: 130%;
+        position: absolute;
+        bottom: -510px;
+        left: -80px;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.web_page_con{
+  background-image: url("../images/back5.png");
+  background-repeat: no-repeat;
+  background-position: center -95px;
+  .container{
+    .web_page{
+      width: 100%;
+      .back{
+        width: 100%;
+        position: absolute;
+        top: 100px;
+        z-index: -1;
+      }
+      .web_page_top{
+        width: 33%;
+        margin: 0 auto 40px;
+        @include flex();
+      }
+      .cards{
+        width: 100%;
+        @include flex(flex-start);
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

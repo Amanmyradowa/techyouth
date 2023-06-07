@@ -1,0 +1,42 @@
+.page_our_courses{
+  width: 100%;
+  margin-top: -130px;
+  min-height: calc(100vh - 240px);
+  overflow: hidden;
+  position: relative;
+  padding-top: 130px;
+  img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+  .container{
+    .page_main{
+      width: 100%;
+      @include flex(center, center, column);
+      .title{
+        width: 50%;
+        color: $black;
+        font-weight: 800;
+        font-size: $seventy;
+        font-family: nuni;
+        span{
+          color: $blue;
+          font-family: nuni;
+        }
+      }
+      .text{
+        margin: 20px 0;
+        color: $grey;
+        font-size: $twenty;
+        line-height: 30px;
+        letter-spacing: 0.2px;
+      }
+      .carts{
+        margin-bottom: 50px;
+        @include flex();
+      }
+    }
+  }
+}

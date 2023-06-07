@@ -1,0 +1,38 @@
+.footer{
+  width: 100%;
+  padding: 10px 0 25px;
+  background: linear-gradient(90.29deg, #1D4CF2 0%, #8845BE 24.41%, #DC899E 59.74%, #CBB6C0 81.96%, #7FCEDE 99.6%);
+  backdrop-filter: blur(0.5px);
+  color: #FFFFFF;
+  .container{
+    .parts{
+      width: 100%;
+      @include flex(space-between, flex-end);
+      .part{
+        width: 20%;
+        .title{
+          font-weight: 800;
+          font-size: 1vw;
+          font-family: nuni;
+          margin-bottom: 5px;
+        }
+        span{
+          font-size: 14px;
+          line-height: 25px;
+        }
+        .icon_title{
+          @include flex(flex-start);
+          margin-bottom: 7px;
+          cursor: pointer;
+          &:last-child{
+            margin-bottom: 0;
+          }
+          span{
+            font-size: 14px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
