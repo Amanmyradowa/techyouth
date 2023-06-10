@@ -54,7 +54,7 @@ const Info = () => {
             </div>
           </div>
           <Link to={'/ourCourses'}>
-            <Button style={{fontFamily: "mont", fontWeight: "700", fontSize: "16px"}} variant="contained">VIEW COURSES</Button>
+            <Button style={{fontFamily: "mont", fontWeight: "700", fontSize: "16px", zIndex: '2'}} variant="contained">VIEW COURSES</Button>
           </Link>
           <img className='imgMobile' src={BackMobile} alt="" />
         </div>

@@ -4,9 +4,10 @@ import BackMobile from "../images/backMobile.png";
 import Line from "../images/line.svg";
 import LineMobile from "../images/lineMobile.svg";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="container">
       <div className="home">
@@ -20,18 +21,20 @@ const Home = () => {
             Every day <span>Bootcamp</span> brings with it a fresh set of
             learning possibilities.
           </p>
-          <Link to={"/info"}>
+          {/* <Link to={"/info"}> */}
             <Button
               style={{
                 fontFamily: "mont",
                 fontWeight: "700",
                 fontSize: "16px",
+                zIndex:2,
               }}
               variant="contained"
+              onClick={()=>navigate('/info')}
             >
               READ MORE
             </Button>
-          </Link>
+          {/* </Link> */}
         </div>
         <div className="home_right">
           <img className="imgBack" src={Back} alt="" />

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const WebDev = () => {
   const navigate = useNavigate();
-  const [activeButton,setActiveButton] = useState(0);
+  const [activeButton,setActiveButton] = useState(false);
   const [students,setStudents] = useState([]);
   useEffect(()=>{
     const name = window.location.search.split('=')[1];
@@ -72,7 +72,7 @@ const WebDev = () => {
         <div className="cards">
           {
             students.map((cart, i) => (
-              <Cart key={i} img={cart.img} name={cart.firstName} lName={cart.lastName} courses={cart.job} in={cart.inLink} git={cart.githubLink}/>
+              <Cart key={i} img={cart.img} name={cart.firstName} lName={cart.lastName} hide={cart.job === 'System Adminstrator' || cart.job === 'Ui/Ux Designer'} courses={cart.job} in={cart.inLink} git={cart.githubLink}/>
             ))
           }
         </div>

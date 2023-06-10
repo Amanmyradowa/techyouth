@@ -1,67 +1,74 @@
-import Aziza from '../../images/person.png';
+import Aziza from '../../images/Aziza.jpg';
+import Begench from '../../images/Begench.jpg';
+import Leyli from '../../images/Leyli.jpg';
+import Mahrijemal from '../../images/Mahrijemal.jpg';
+import BegenchA from '../../images/BegenchA.jpg';
+import Maral from '../../images/Maral.jpg';
+import Nurmuhammet from '../../images/Nurmuhammet.jpg';
+import Selim from '../../images/Selim.jpg';
+import Person from '../../images/person.png';
 export const ItStudentsDatas = [
   {
     img: Aziza,
     firstName: 'Aziza',
     lastName: 'Serdarova',
-    job: 'IT administrater',
-    inLink: '',
-    githubLink: ''
+    job: 'System Adminstrator',
+    inLink: ''
   },
   {
-    img: Aziza,
+    img: BegenchA,
     firstName: 'Begench',
     lastName: 'Amangeldiyev',
-    job: 'IT administrater',
-    inLink: '',
-    githubLink: ''
+    job: 'System Adminstrator',
+    inLink: ''
   },
   {
-    img: Aziza,
-    firstName: 'Selim',
-    lastName: 'Sadykov',
-    job: 'IT administrater',
-    inLink: '',
-    githubLink: ''
-  },
-  {
-    img: Aziza,
+    img: Begench,
     firstName: 'Begench',
     lastName: 'Gurbangeldiyev',
-    job: 'IT administrater',
-    inLink: '',
-    githubLink: ''
+    job: 'System Adminstrator',
+    inLink: ''
   },
   {
-    img: Aziza,
+    img: Leyli,
     firstName: 'Leyli',
     lastName: 'Hodjageldiyeva',
-    job: 'IT administrater',
-    inLink: '',
-    githubLink: ''
+    job: 'System Adminstrator',
+    inLink: ''
   },
   {
-    img: Aziza,
-    firstName: 'Gulsenem',
-    lastName: 'Muhammedova',
-    job: 'IT administrater',
-    inLink: '',
-    githubLink: ''
-  },
-  {
-    img: Aziza,
+    img: Maral,
     firstName: 'Maral',
-    lastName: 'Chrariyeva',
-    job: 'IT administrater',
-    inLink: '',
-    githubLink: ''
+    lastName: 'Chariyeva',
+    job: 'System Adminstrator',
+    inLink: ''
   },
   {
-    img: Aziza,
+    img: Nurmuhammet,
+    firstName: 'Nurmuhammad',
+    lastName: 'Seyidov',
+    job: 'System Adminstrator',
+    inLink: ''
+  },
+  {
+    img: Mahrijemal,
     firstName: 'Mahrijemal',
     lastName: 'Sahatova',
-    job: 'IT administrater',
-    inLink: '',
-    githubLink: ''
-  }
+    job: 'System Adminstrator',
+    inLink: ''
+  },
+  {
+    img: Person,
+    firstName: 'Gulsenem',
+    lastName: 'Muhammedova',
+    job: 'System Adminstrator',
+    inLink: ''
+  },
+  {
+    img: Selim,
+    firstName: 'Selim',
+    lastName: 'Sadykov',
+    job: 'System Adminstrator',
+    inLink: ''
+  },
 ]

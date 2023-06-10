@@ -1,6 +1,6 @@
 import React from 'react';
 import Back from '../images/back4.png';
-import Video from '../images/filter.png';
+import Opshy from '../images/open.JPG';
 
 const About = () => {
   return (
@@ -17,7 +17,9 @@ const About = () => {
             <li>Graphic and UI/UX design;</li>
             <li>Maintenance and administration of IT systems.</li>
           </div>
-          <img className='video' src={Video} alt="" />
+          <div className="open_img">
+            <img className='video' src={Opshy} alt="" />
+          </div>
           <div className="text">
             The organizers of the USAID training project together with the Sanly Bilim company invited the youth of Turkmenistan <span>aged 18 to 25</span> to take part in the program.
           </div>

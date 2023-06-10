@@ -1,29 +1,146 @@
 .container{
+  .line_svg_mobile{
+    display: none;
+
+    @include mobile{
+      display: block;
+      position: absolute;
+      top: -320px;
+      left: -75px;
+      z-index: -1;
+    }
+  }
+
+  .header_mobile{
+    display: none;
+    padding: 20px 0 20px;
+    position: relative;
+    z-index: 3;
+    
+    @include mobile{
+      @include flex(space-around);
+    }
+    .hamburger_con{
+      .hamburger{
+        cursor: pointer;
+      }
+      .menu_mobile{
+        position: absolute;
+        left: 0;
+        z-index: 3;
+        background: rgba(29, 76, 242, 0.8);
+        font-size: 12px;
+        padding: 15px 20px;
+        border-radius: 0 19px 13px 0;
+        a{
+          text-decoration: none;
+          color: white;
+          margin-bottom: 10px;
+        }
+        a,.menu_dropdown{
+          color: white;
+          span{
+            width: 30%;
+            background: white;
+            height: 2px;
+            margin-top: 10px;
+          }
+        }
+        .menu_dropdown{
+          .dropdown_main{
+            cursor: pointer;
+            svg{
+              margin-left: 10px;
+            }
+          }
+          .dropdown_options{
+            .option{
+              @include flex(flex-start);
+              text-decoration: underline;
+              margin-top: 10px;
+              span{
+                width: 2px !important;
+                height: 2px;
+                border-radius: 1px;
+                background: white;
+                margin-right: 5px;
+              }
+            }
+          }
+          span{
+            width: 30%;
+            background: white;
+            height: 2px;
+            margin-top: 10px;
+            display: block;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    .langMobile,.langMobile_options span{
+      font-weight: 700;
+      font-size: 9px;
+      display: inline-block;
+      color: #FFFFFF;
+      background-color: $blue;
+      padding: 6.5px 1.5px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .langMobile_con{
+      position: relative;
+    }
+    .langMobile_options{
+      position: absolute;
+      @include flex();
+      flex-direction: column;
+      z-index: 3;
+      span{
+        margin-top: 10px;
+      }
+    }
+  }
   .header{
     width: 100%;
     @include flex();
     padding: 45px 0;
     position: relative;
     z-index: 100;
+
+    @include mobile{
+      display: none;
+    }
+
     .logo{
       position: relative;
       width: 30%;
+
       .line_svg{
         position: absolute;
         left: -335px;
         top: -505px;
         z-index: -1;
+
+        @include mobile{
+          display: none;
+        }
       }
     }
     .left{
       width: 55%;
       @include flex();
+
       .navbar{
         width: 70%;
         @include flex();
 
         @include tablet{
           width: 85%;
+        }
+
+        @include mobile{
+          display: none;
         }
         a{
           text-decoration: none;
@@ -47,31 +164,55 @@
           }
         }
       }
-      .languages{
-        width: 10%;
-        display: flex;
-        justify-content: flex-end;
-        .lang{    
-          width: 35px;
-          height: 35px;
-          padding: 10px 3px;
-          background-color: #1D4CF2;
-          border-radius: 24px;
+      .lang{
+        span{
+          width: 40px;
+          font-family: mont;
           font-weight: 700;
           font-size: 14px;
+          padding: 10px 3px;
+          background-color: $blue;
           color: #FFFFFF;
-          cursor: pointer;
-          @include flex(center);
+          border-radius: 50%;
+          @include flex(center); 
+        }
+        #rus{
+          margin-bottom: 14px;
+        }
+
+      }
+      .lang_con{
+        position: relative;
+        cursor: pointer;
+        // &:hover{
+        //   .dropdown{
+        //     display: block;
+        //   }
+        // }
+        .dropdown{
+          position: absolute;
+          top: 50px;
+          @include flex(flex-start, center, column);
         }
       }
     }
 
   }
 }
-.css-6hp17o-MuiList-root-MuiMenu-list{
+.css-6hp17o-MuiList-root-MuiMenu-list {
   background: rgba(29, 76, 242, 0.8);
   box-shadow: 0px 19px 13px rgba(0, 0, 0, 0.07);
   border-radius: 5px;
+  color: #FFFFFF;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+  font-family: mont;  
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
 }
 a{
   text-decoration: none;

@@ -23,13 +23,13 @@ body{
 }
 
 @mixin tablet{
-    @media (max-width:991px){
+    @media (max-width:1000px){
         @content;
     }
 }
 
 @mixin mobile {
-    @media (max-width:450px) {
+    @media (max-width:640px) {
         @content;
     }
 }

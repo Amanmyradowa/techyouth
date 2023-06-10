@@ -4,18 +4,30 @@
     position: relative;
     .left{
       position: absolute;
-      top: 50%;
+      top: 40%;
       transform: translateX(50%);
-      left: -115px;
+      left: -105px;
+      @include mobile{
+        display: none;
+      }
     }
     .right{
       position: absolute;
-      top: 50%;
+      top: 20%;
       right: -140px;
       z-index: -10;
+      @include mobile{
+        display: none;
+      }
     }
     .news_page_middle{
+      width: 95%;
       @include flex(space-between, flex-end);
+      @include mobile{
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 30px;
+      }
       .news_page_title{
         width: 80%;
         color: $black;
@@ -24,6 +36,12 @@
         font-size: 70px;
         font-family: nuni;
         margin-bottom: 45px;
+        @include mobile{
+          font-size: 40px;
+          line-height: 50px;
+          width: 100%;
+          margin-bottom: 30px;
+        }
         span{
           color: $blue;
           font-family: nuni;
@@ -34,16 +52,20 @@
         top: -10px;
         right: 290px;
         display: flex;
+        @include mobile{
+          right: 35px;
+          top:100px;
+        }
       }
       .layer{
         position: absolute;
-        bottom: 80px;
+        top: 100px;
         left: 650px;
       }
       .little{
         position: absolute;
         right: 300px;
-        bottom: 0;
+        top: 210px;
         display: flex;
       }
       .auther_name_job{
@@ -60,13 +82,19 @@
         }
       }
     }
-    .swiper_title{
-      font-weight: 900;
-      font-size: 24px;
-      font-family: nuni;
-      margin-bottom: 20px;
-      span{
-        color: $blue;
+    .swiper{
+      margin-bottom: 50px;
+      .swiper_title{
+        font-weight: 900;
+        font-size: 24px;
+        font-family: nuni;
+        margin-bottom: 20px;
+        span{
+          color: $blue;
+        }
+      }
+      .swiper_imges_con{
+        @include flex();
       }
     }
   }

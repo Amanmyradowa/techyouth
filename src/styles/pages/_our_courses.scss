@@ -21,6 +21,11 @@
         font-weight: 800;
         font-size: $seventy;
         font-family: nuni;
+        @include mobile{
+          width: 100%;
+          font-size: 30px;
+          text-align: center;
+        }
         span{
           color: $blue;
           font-family: nuni;
@@ -32,10 +37,31 @@
         font-size: $twenty;
         line-height: 30px;
         letter-spacing: 0.2px;
+        @include mobile{
+          font-size: 18px;
+        }
       }
       .carts{
         margin-bottom: 50px;
         @include flex();
+        @include mobile{
+          flex-wrap: wrap;
+          .cart{
+            width: 48%;
+            margin-bottom: 10px;
+            padding: 20px 15px;
+            svg{
+              width: 40px;
+              height: 40px;
+            }
+            .cart_title{
+              p{
+                font-size: 20px;
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
       }
     }
   }

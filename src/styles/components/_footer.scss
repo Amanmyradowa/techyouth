@@ -4,21 +4,61 @@
   background: linear-gradient(90.29deg, #1D4CF2 0%, #8845BE 24.41%, #DC899E 59.74%, #CBB6C0 81.96%, #7FCEDE 99.6%);
   backdrop-filter: blur(0.5px);
   color: #FFFFFF;
+
+  @include mobile{
+    padding: 17px 0 20px;
+  }
+
   .container{
     .parts{
       width: 100%;
       @include flex(space-between, flex-end);
+
+      @include mobile{
+        @include flex(space-between, flex-start, column)
+      }
+
+      .titleMobile{
+        display: none;
+        font-size: 13px;
+        font-weight: 800;
+        margin-bottom: 15px;
+
+        @include mobile{
+          display: block;
+        }
+      }
+      .mobile{
+        display: block;
+        @include mobile{
+          display: none;
+        }
+      }
       .part{
         width: 20%;
+
+        @include mobile{
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
         .title{
           font-weight: 800;
-          font-size: 1vw;
+          font-size: 18px;
           font-family: nuni;
           margin-bottom: 5px;
+
+          @include mobile{
+            font-size: 13px;
+          }
         }
         span{
           font-size: 14px;
           line-height: 25px;
+
+          @include mobile{
+            font-size: 11px;
+          }
         }
         .icon_title{
           @include flex(flex-start);
@@ -32,6 +72,44 @@
             margin-left: 10px;
           }
         }
+      }
+
+      .footer_bottom{
+        width: 100%;
+        display: none;
+
+        @include mobile{
+          @include flex(flex-end);
+        }
+
+        .footer_bottom_left{
+          width: 50%;
+
+          .icon_title{
+            @include flex(flex-start);
+            margin-bottom: 8px;
+
+            span{
+              font-size: 9px;
+              margin-left: 14px;
+            }
+          }
+        }
+
+        .footer_bottom_right{
+          width: 50%;
+
+          .icon_title{
+            @include flex(flex-start);
+            margin-bottom: 8px;
+            
+            span{
+              font-size: 9px;
+              margin-left: 14px;
+            }
+          }
+        }
+
       }
     }
   }

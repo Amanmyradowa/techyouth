@@ -119,12 +119,14 @@
         display: none;
 
         @include mobile{
-          display: block !important;
           position: absolute;
+          top: 195px;
           width: 105%;
           height: 100%;
           object-fit: cover;
           margin-left: -2.5%;
+          display: block !important;
+          padding-bottom: 125px;
         }
       }
     }

@@ -2,13 +2,22 @@
   .about{
     width: 100%;
     @include flex();
+    @include mobile{
+      flex-direction: column;
+    }
     .about_left{
       width: 50%;
+      @include mobile{
+        width: 100%;
+      }
       .about_title{
         color: $black;
         font-weight: 800;
         font-size: $seventy;
         font-family: nuni;
+        @include mobile{
+          font-size: 40px;
+        }
         span{
           color: $blue;
         }
@@ -18,6 +27,10 @@
         line-height: 30px;
         color: $grey;
         margin: 20px 0;
+        @include mobile{
+          font-size: 16px;
+          margin-top: 0;
+        }
         span{
           color: $blue;
         }
@@ -27,21 +40,40 @@
           font-size: 20px;
           line-height: 30px;
           color: $blue;
+          @include mobile{
+            font-size: 16px;
+          }
         }
       }
-      .video{
-        margin: 20px 0;
-        border-radius: 20px;
+      .open_img{
+        width: 80%;
+        @include mobile{
+          width: 100%;
+        }
+        .video{
+          width: 100%;
+          margin: 20px 0;
+          border-radius: 20px;
+        }
       }
     }
     .about_right{
       width: 50%;
       position: relative;
+      @include mobile{
+        width: 100%;
+        height: 400px;
+      }
       img{
         width: 130%;
         position: absolute;
         bottom: -510px;
         left: -80px;
+        @include mobile{
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
       }
     }
   }

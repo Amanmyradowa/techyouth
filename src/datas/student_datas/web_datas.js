@@ -1,28 +1,12 @@
-import Dinara from '../../images/person.png';
-import Jennet from '../../images/person.png';
-import Samira from '../../images/person.png';
-import Arazgeldi from '../../images/person.png';
-import Rowshen from '../../images/person.png';
-import Gulalek from '../../images/person.png';
-import Suleyman from '../../images/person.png';
-import Myrat from '../../images/person.png';
+import Dinara from '../../images/Dinara.jpg';
+import Jennet from '../../images/Jenneta.jpg';
+import Samira from '../../images/Samira.jpg';
+import Arazgeldi from '../../images/Araz.jpg';
+import Rowshen from '../../images/Rowshen.jpg';
+import Gulalek from '../../images/Gulalek.jpg';
+import Suleyman from '../../images/Suleyman.jpg';
+import Myrat from '../../images/Myrat.jpg';
 export const WebStudentsDatas = [
-  {
-    img: Dinara,
-    firstName: 'Dinara',
-    lastName: 'Muhtarova',
-    job: 'Web developer',
-    inLink: 'https://www.linkedin.com/in/dinara-muhtarova-0572a424b',
-    githubLink: 'https://github.com/imdina'
-  },
-  {
-    img: Jennet,
-    firstName: 'Jennet',
-    lastName: 'Durdiyeva',
-    job: 'Web developer',
-    inLink: 'https://www.linkedin.com/in/jennet-durdyyewa-339110279',
-    githubLink: 'https://github.com/jenjennis'
-  },
   {
     img: Gulalek,
     firstName: 'Gulalek',
@@ -32,12 +16,20 @@ export const WebStudentsDatas = [
     githubLink: 'https://github.com/Amanmyradowa'
   },
   {
-    img: Samira,
-    firstName: 'Samira',
-    lastName: 'Badalova',
+    img: Myrat,
+    firstName: 'Myrat',
+    lastName: 'Jumayev',
     job: 'Web developer',
-    inLink: 'https://www.linkedin.com/in/dinara-muhtarova-0572a424b',
-    githubLink: 'https://github.com/Badalova'
+    inLink: 'https://www.linkedin.com/in/myrat-jumayev-70867b265',
+    githubLink: 'https://github.com/JumayevMyrat'
+  },
+  {
+    img: Jennet,
+    firstName: 'Jennet',
+    lastName: 'Durdyyeva',
+    job: 'Web developer',
+    inLink: 'https://www.linkedin.com/in/jennet-durdyyewa-339110279',
+    githubLink: 'https://github.com/jenjennis'
   },
   {
     img: Arazgeldi,
@@ -48,14 +40,6 @@ export const WebStudentsDatas = [
     githubLink: 'https://github.com/arazgeldi-durdyyev'
   },
   {
-    img: Rowshen,
-    firstName: 'Rowshen',
-    lastName: 'Mergenov',
-    job: 'Web developer',
-    inLink: '',
-    githubLink: 'https://github.com/rocky14232'
-  },
-  {
     img: Suleyman,
     firstName: 'Suleyman',
     lastName: 'Hannyyev',
@@ -64,11 +48,27 @@ export const WebStudentsDatas = [
     githubLink: 'https://github.com/suleyman2004'
   },
   {
-    img: Myrat,
-    firstName: 'Myrat',
-    lastName: 'Jumayev',
+    img: Samira,
+    firstName: 'Samira',
+    lastName: 'Badalova',
     job: 'Web developer',
-    inLink: 'https://www.linkedin.com/in/myrat-jumayev-70867b265',
-    githubLink: 'https://github.com/JumayevMyrat'
+    inLink: 'https://www.linkedin.com/in/dinara-muhtarova-0572a424b',
+    githubLink: 'https://github.com/Badalova'
+  },
+  {
+    img: Rowshen,
+    firstName: 'Rowshen',
+    lastName: 'Mergenov',
+    job: 'Web developer',
+    inLink: 'https://www.linkedin.com/in/rowshen-mergenow-140b53278',
+    githubLink: 'https://github.com/rocky14232'
+  },
+  {
+    img: Dinara,
+    firstName: 'Dinara',
+    lastName: 'Muhtarova',
+    job: 'Web developer',
+    inLink: 'https://www.linkedin.com/in/dinara-muhtarova-0572a424b',
+    githubLink: 'https://github.com/imdina'
   }
 ]

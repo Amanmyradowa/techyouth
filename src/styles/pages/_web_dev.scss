@@ -15,12 +15,45 @@
         width: 33%;
         margin: 0 auto 40px;
         @include flex();
+        @include mobile{
+          width: 90%;
+          margin-bottom: 20px;
+          button{
+            padding: 10px 20px;
+            font-size: 12px;
+          }
+        }
       }
       .cards{
         width: 100%;
         @include flex(flex-start);
         flex-wrap: wrap;
         padding-bottom: 20px;
+        @include mobile{
+          .cart_student{
+            width: 48%;
+            margin-right: 2%;
+            padding: 10px;
+            &:nth-child(2n){
+              margin-right: 0;
+            }
+            img{
+              height: 200px;
+            }
+            .name{
+              font-size: 18px;
+            }
+            .course{
+              margin: 10px 0 15px;
+            }
+            .links{
+              width: max-content;
+              a{
+                margin: 0 5px;
+              }
+            }
+          }
+        }
       }
     }
   }

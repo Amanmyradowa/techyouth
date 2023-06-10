@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../logo/logo.svg";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
+import { Collapse } from '@mui/material';
 
 //dropdown
 import Menu from "@mui/material/Menu";
@@ -10,9 +11,10 @@ const Header = () => {
   const location = useLocation();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const [anchorElLang, setAnchorElLang] = useState(null);
-  const openLang = Boolean(anchorElLang);
-  const [language, setLanguage] = useState("ENG");
+  const [openMenu, setOpenMenu] = useState(false);
+  const [menuDropdown, setMenuDropdown] = useState(false);
+  const [lang, setLang] = useState(false);
+  const [langText, setLangText] = useState('ENG')
 
   useEffect(() => {
     const el = document.querySelectorAll(".navbar a");
@@ -38,20 +40,140 @@ const Header = () => {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleCloseLang = (event) => {
-    const lang = event.target.textContent;
-    if (lang) {
-      setLanguage(event.target.textContent);
-    }
-    setAnchorElLang(null);
-  };
 
-  const handleClickLang = (event) => {
-    setAnchorElLang(event.currentTarget);
-  };
+  useEffect(()=>{
+    document.addEventListener('click',function(e){
+      const con = document.querySelector('.hamburger_con');
+      const langCon = document.querySelector('.lang_con');
+      const langMobileCon = document.querySelector('.langMobile_con')
+      if(!langCon.contains(e.target) && !langMobileCon.contains(e.target)){
+        setLang(false);
+      }
+      if(con){
+        if(!con.contains(e.target)){
+          setOpenMenu(false);
+        }
+      }
+      const links = document.querySelectorAll('.hamburger_con a');
+      for(let i = 0; i<links.length; i++){
+        links[i].addEventListener('click',function(){
+          setOpenMenu(false);
+        })
+      }
+    })
+  },[])
 
+  const changeLanguage = (lang) => {
+    setLangText(lang);
+    setLang(false);
+  }
   return (
     <div className="container">
+      <svg
+        className="line_svg_mobile"
+        width="257"
+        height="475"
+        viewBox="0 0 257 475"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1.76969 202.59C2.20587 199.735 2.82271 196.93 3.6139 194.205C10.876 169.184 29.456 158.005 49.1258 146.166C62.9478 137.845 77.2436 129.242 87.3134 115.384C96.9825 102.078 102.245 84.5285 107.349 67.5574C110.12 58.3118 112.988 48.7528 116.544 39.8925C127.285 13.1405 150.767 -7.96895 169.97 4.57452C184.712 14.2061 188.789 38.4045 189.907 51.9691C190.353 57.3821 190.585 62.9358 190.809 68.3103C191.347 81.2092 191.901 94.5469 195.489 106.653C200.621 123.95 211.376 137.068 221.776 149.747C227.714 156.952 233.811 164.42 238.927 172.643C254.17 197.148 260.174 232.111 254.986 266.178C250.629 294.79 239.136 319.295 222.622 335.184C215.411 342.111 207.225 347.788 199.3 353.279C184.271 363.694 170.073 373.529 161.455 391.37C156.877 400.844 154.415 411.871 152.031 422.529C150.863 427.744 149.659 433.138 148.215 438.319C144.983 449.925 137.339 470.006 122.455 474.15C104.202 479.229 87.4381 455.235 83.2323 429.632C81.5106 419.136 81.0517 408.201 80.6307 397.625C80.0576 383.859 79.4644 369.62 76.0441 356.445C69.7077 332.099 54.5886 313.938 39.9642 296.37C36.1202 291.753 32.1591 286.982 28.4054 282.176C18.6275 269.658 -3.45318 236.888 1.76969 202.59ZM253.669 265.819C258.78 232.254 252.877 197.814 237.877 173.701C232.818 165.572 226.731 158.153 220.849 150.979C210.342 138.17 199.474 124.927 194.237 107.249C190.577 94.896 190.012 81.4242 189.469 68.3867C189.246 63.0354 189.015 57.5047 188.569 52.1489C187.478 38.9285 183.531 15.3746 169.349 6.10633C150.869 -5.95329 128.152 14.6671 117.709 40.6473C114.174 49.4215 111.331 58.9407 108.575 68.1443C103.438 85.273 98.1281 102.988 88.2806 116.541C78.0282 130.645 63.6156 139.322 49.6735 147.71C30.26 159.396 11.9136 170.428 4.85371 194.784C4.08636 197.427 3.48839 200.146 3.06589 202.915C-2.03199 236.392 19.7091 268.62 29.2953 280.924C33.0176 285.704 36.9881 290.472 40.8244 295.081C55.5677 312.793 70.8173 331.107 77.2576 355.869C80.7392 369.247 81.3369 383.602 81.9135 397.488C82.3531 408.001 82.8042 418.871 84.5064 429.236C88.5762 454.027 104.676 477.3 122.154 472.433C136.935 468.321 144.407 446.778 146.935 437.712C148.362 432.585 149.562 427.218 150.722 422.03C153.132 411.253 155.625 400.113 160.301 390.429C169.112 372.19 184.125 361.788 198.652 351.727C206.52 346.262 214.684 340.62 221.809 333.768C238.071 318.142 249.372 294.007 253.664 265.818L253.669 265.819Z"
+          fill="#1D4CF2"
+        />
+      </svg>
+      <div className="header_mobile">
+        <div className="hamburger_con">
+          <svg
+            className="hamburger"
+            onClick={() => setOpenMenu(!openMenu)}
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 7.5H21"
+              stroke="#1846E8"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M3 12.5H21"
+              stroke="#1846E8"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M3 17.5H21"
+              stroke="#1846E8"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
+          {
+            openMenu ? 
+            <div className="menu_mobile">
+              <NavLink to={"/"}>Home <span></span></NavLink>
+              <NavLink to={"/info"}>Information <span></span></NavLink>
+              <div className="menu_dropdown">
+                <div className="dropdown_main" onClick={()=>setMenuDropdown(!menuDropdown)}>
+                  Our Courses
+                  <svg
+                    width="12"
+                    height="7"
+                    viewBox="0 0 12 7"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L6 6L11 1"
+                      stroke="white"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <Collapse in={menuDropdown} className="dropdown_options">
+                  <NavLink to={'ourCourses'} className="option"><span></span>Full Courses</NavLink>
+                  <NavLink to={'courses?name=web'} className="option"><span></span>Web Development</NavLink>
+                  <NavLink to={'courses?name=app'} className="option"><span></span>App Development</NavLink>
+                  <NavLink to={'courses?name=design'} className="option"><span></span>UI/UX design</NavLink>
+                  <NavLink to={'courses?name=it'} className="option"><span></span>IT administration </NavLink>
+                </Collapse>
+                <span></span>
+              </div>
+              <NavLink to={"/about"}>About <span></span></NavLink>
+              <NavLink to={"/news"}>News <span></span></NavLink>
+            </div>:''
+          }
+        </div>
+        <img src={Logo} alt="Logo" />
+
+        <div className="langMobile_con">
+          <div className="langMobile" onClick={()=>setLang(!lang)}>{langText}</div>
+          {
+            lang ? 
+              <div className="langMobile_options">
+                {
+                  langText !== 'РУС'?
+                  <span id="rus" onClick={()=>changeLanguage('РУС')}>РУС</span>:''
+                }
+                {
+                  langText !== 'TKM'?
+                  <span id="rus" onClick={()=>changeLanguage('TKM')}>TKM</span>:''
+                }
+                {
+                  langText !== 'ENG'?
+                  <span id="rus" onClick={()=>changeLanguage('ENG')}>ENG</span>:''
+                }
+              </div>:''
+          }
+        </div>
+      </div>
+
       <header className="header">
         <div className="logo">
           <Link to={"/"}>
@@ -130,16 +252,19 @@ const Header = () => {
                   <MenuItem className="link" onClick={handleClose}>
                     Web Development
                   </MenuItem>
+                  <span className="line"></span>
                 </Link>
                 <Link to={"/courses?name=app"}>
                   <MenuItem className="link" onClick={handleClose}>
                     App Development
                   </MenuItem>
+                  <span className="line"></span>
                 </Link>
                 <Link to={"/courses?name=design"}>
                   <MenuItem className="link" onClick={handleClose}>
                     UI/UX design
                   </MenuItem>
+                  <span className="line"></span>
                 </Link>
                 <Link to={"/courses?name=it"}>
                   <MenuItem className="link" onClick={handleClose}>
@@ -152,30 +277,26 @@ const Header = () => {
             <Link to={"/about"}>About</Link>
             <Link to={"/news"}>News</Link>
           </nav>
-          <div className="languages">
-            <div
-              className="lang"
-              id="basic-button"
-              aria-controls={openLang ? "basic-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={openLang ? "true" : undefined}
-              onClick={handleClickLang}
-            >
-              {language}
-            </div>
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorElLang}
-              open={openLang}
-              onClose={handleCloseLang}
-              MenuListProps={{
-                "aria-labelledby": "basic-button",
-              }}
-            >
-              <MenuItem onClick={handleCloseLang}>ENG</MenuItem>
-              <MenuItem onClick={handleCloseLang}>RUS</MenuItem>
-              <MenuItem onClick={handleCloseLang}>TKM</MenuItem>
-            </Menu>
+
+          <div className="lang_con lang">
+            <span onClick={()=>setLang(!lang)}>{langText}</span>
+            {
+              lang ?
+                <div className="dropdown lang">
+                  {
+                    langText !== 'РУС'?
+                    <span id="rus" onClick={()=>changeLanguage('РУС')}>РУС</span>:''
+                  }
+                  {
+                    langText !== 'TKM'?
+                    <span id="rus" onClick={()=>changeLanguage('TKM')}>TKM</span>:''
+                  }
+                  {
+                    langText !== 'ENG'?
+                    <span id="rus" onClick={()=>changeLanguage('ENG')}>ENG</span>:''
+                  }
+                </div>:''
+            }
           </div>
         </div>
       </header>
